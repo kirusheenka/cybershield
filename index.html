@@ -3,78 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>КиберЩит — Глобальная база психологической защиты</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <title>КиберЩит — Полная база психологической самообороны</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #1e40af; --secondary: #3b82f6; --accent: #e11d48; --warning: #f59e0b;
-            --success: #10b981; --text: #0f172a; --text-muted: #64748b; --bg: #ffffff;
-            --white: #ffffff; --radius: 30px; --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --success: #10b981; --text: #0f172a; --text-light: #64748b; --bg: #f8fafc;
+            --white: #ffffff; --radius: 24px; --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
             --font-base: 16px;
         }
 
-        body.senior-mode { --font-base: 26px; --text: #000; --primary: #0000cc; }
-        body.senior-mode .card { border: 5px solid #000; }
-        body.senior-mode .btn { font-size: 1.8rem; padding: 30px 60px; border: 4px solid #000; }
+        /* --- ВЕРСИЯ ДЛЯ ПОЖИЛЫХ --- */
+        body.senior-mode { --font-base: 24px; --text: #000; --bg: #fff; --primary: #0000cc; }
+        body.senior-mode .card, body.senior-mode .quiz-card { border: 4px solid #000; padding: 40px; }
+        body.senior-mode h1, body.senior-mode h2, body.senior-mode h3 { font-weight: 900; line-height: 1.2; text-decoration: underline; }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); font-size: var(--font-base); line-height: 1.7; transition: 0.3s; overflow-x: hidden; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); font-size: var(--font-base); line-height: 1.6; transition: 0.3s; overflow-x: hidden; }
 
+        /* --- HEADER --- */
         header { background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 1000; padding: 15px 0; }
         .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
-        .logo h1 { font-size: 1.8rem; color: var(--primary); font-weight: 900; letter-spacing: -1.5px; }
+        .logo h1 { font-size: 1.6rem; color: var(--primary); font-weight: 900; letter-spacing: -1px; }
         
-        nav ul { display: flex; list-style: none; gap: 10px; }
-        nav a { text-decoration: none; color: var(--text); font-weight: 700; font-size: 0.9rem; padding: 10px 20px; border-radius: 15px; transition: 0.3s; cursor: pointer; }
+        nav ul { display: flex; list-style: none; gap: 8px; flex-wrap: wrap; }
+        nav a { text-decoration: none; color: var(--text); font-weight: 700; font-size: 0.85rem; padding: 10px 14px; border-radius: 12px; transition: 0.3s; cursor: pointer; }
         nav a:hover, nav a.active { background: #eff6ff; color: var(--primary); }
 
-        .btn-senior { background: var(--warning); border: none; padding: 10px 20px; border-radius: 50px; font-weight: 900; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .btn-senior { background: var(--warning); border: 2px solid #000; padding: 8px 16px; border-radius: 50px; font-weight: 800; cursor: pointer; }
 
-        section { display: none; padding: 80px 20px; animation: fadeIn 0.6s ease-out; }
+        /* --- LAYOUT --- */
+        section { display: none; padding: 60px 20px; animation: fadeIn 0.4s ease-out; }
         section.active { display: block; }
         .container { max-width: 1100px; margin: 0 auto; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        .reveal { opacity: 0; transform: translateY(40px); transition: 1s all ease; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s all ease; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
         /* --- HERO --- */
-        .hero-section { position: relative; padding: 120px 20px; overflow: hidden; border-radius: 0 0 80px 80px; background: #000; color: white; margin-bottom: 60px; }
-        .hero-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4; filter: brightness(0.6); }
-        .hero-content { position: relative; z-index: 10; text-align: center; max-width: 900px; margin: 0 auto; }
-        .hero h2 { font-size: 4rem; font-weight: 900; line-height: 1; margin-bottom: 30px; letter-spacing: -2px; }
+        .hero { text-align: center; padding: 100px 20px; background: radial-gradient(circle at top right, #eff6ff, var(--bg)); border-radius: 0 0 60px 60px; border-bottom: 1px solid #e2e8f0; margin-bottom: 40px; }
+        .hero h2 { font-size: 3rem; margin-bottom: 25px; line-height: 1.1; color: var(--primary); font-weight: 900; }
+        .hero p { max-width: 800px; margin: 0 auto 40px auto; font-size: 1.2rem; color: var(--text-muted); }
 
-        .btn { display: inline-block; padding: 22px 50px; border-radius: 100px; text-decoration: none; font-weight: 900; font-size: 1.2rem; transition: 0.4s; cursor: pointer; border: none; }
-        .btn-primary { background: var(--secondary); color: white; box-shadow: 0 15px 30px rgba(59, 130, 246, 0.4); }
-        .btn-primary:hover { transform: scale(1.05) translateY(-5px); }
-
-        /* --- CARDS & GRID --- */
-        .card { background: white; padding: 50px; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid #f1f5f9; margin-bottom: 40px; position: relative; overflow: hidden; }
-        .card-img { width: 100%; height: 250px; object-fit: cover; border-radius: 20px; margin-bottom: 30px; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; margin-top: 40px; }
-
-        .info-block { margin-top: 40px; border-top: 2px solid #f1f5f9; padding-top: 30px; }
-        .tag { display: inline-block; padding: 6px 16px; border-radius: 50px; background: #f1f5f9; color: var(--primary); font-weight: 800; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 20px; }
-
-        /* --- QUIZ --- */
-        .quiz-box { background: white; border-radius: 40px; padding: 60px; box-shadow: var(--shadow); border: 2px solid #e2e8f0; margin-top: -120px; position: relative; z-index: 100; }
-        .quiz-item { display: flex; justify-content: space-between; align-items: center; padding: 30px 0; border-bottom: 1px solid #f1f5f9; gap: 30px; }
-        .quiz-item p { font-weight: 700; font-size: 1.2rem; line-height: 1.3; }
-        .q-btns { display: flex; gap: 15px; }
-        .q-btn { padding: 15px 35px; border-radius: 50px; border: 2px solid #e2e8f0; background: none; font-weight: 800; cursor: pointer; transition: 0.3s; }
+        /* --- CARDS & UI --- */
+        .card { background: white; padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow); transition: 0.3s; border-top: 6px solid var(--secondary); margin-bottom: 30px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 25px; margin-top: 30px; }
+        .example-box { background: #f8fafc; padding: 25px; border-radius: 15px; border-left: 6px solid var(--secondary); margin: 20px 0; font-style: italic; }
+        .red-flag-list { background: #fff1f2; padding: 20px; border-radius: 15px; border: 1px solid #fecaca; margin: 20px 0; }
+        .red-flag-list li { list-style: none; color: var(--accent); font-weight: 700; margin-bottom: 10px; }
+.check-step { background: #f0fdf4; padding: 15px; border-radius: 10px; border-left: 5px solid var(--success); margin-top: 10px; font-weight: 600; }
+        
+        .quiz-card { background: white; border-radius: 30px; padding: 50px; box-shadow: var(--shadow); border: 2px solid #e2e8f0; margin-top: -80px; position: relative; z-index: 10; }
+        .quiz-item { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; border-bottom: 1px solid #f1f5f9; gap: 20px; }
+        .q-btn { padding: 12px 30px; border-radius: 50px; border: 2px solid #e2e8f0; background: none; font-weight: 800; cursor: pointer; transition: 0.3s; }
         .q-btn.active.yes { background: var(--accent); color: white; border-color: var(--accent); }
         .q-btn.active.no { background: var(--success); color: white; border-color: var(--success); }
 
-        /* --- ELEMENTS --- */
-        .rule-hero { background: var(--primary); color: white; padding: 80px 40px; border-radius: 50px; text-align: center; margin: 80px 0; position: relative; overflow: hidden; }
-        .rule-hero h1 { font-size: 4rem; letter-spacing: 5px; font-weight: 900; margin: 30px 0; }
-        
-        .sos-float { position: fixed; bottom: 40px; right: 40px; background: var(--accent); color: white; width: 100px; height: 100px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: 900; font-size: 1.1rem; box-shadow: 0 20px 40px rgba(225, 29, 72, 0.4); animation: pulse 2s infinite; z-index: 2001; }
+        /* --- DECOR --- */
+        .img-wrap { width: 100%; height: 300px; border-radius: 20px; overflow: hidden; margin-bottom: 30px; }
+        .img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+        .rule-hero { background: var(--primary); color: white; padding: 60px; border-radius: var(--radius); text-align: center; margin: 40px 0; }
+        .rule-hero h1 { font-size: 3.5rem; letter-spacing: 3px; font-weight: 900; }
+
+        .sos-btn { position: fixed; bottom: 30px; right: 30px; background: var(--accent); color: white; width: 90px; height: 90px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: 900; z-index: 2000; animation: pulse 2s infinite; text-align: center; line-height: 1.1; }
         @keyframes pulse { 0% { scale: 1; } 50% { scale: 1.1; } 100% { scale: 1; } }
 
-        footer { background: #020617; color: #94a3b8; padding: 100px 20px; text-align: center; margin-top: 120px; border-radius: 80px 80px 0 0; }
-        .footer-logo { font-size: 2.5rem; color: white; font-weight: 900; margin-bottom: 20px; }
+        footer { background: #020617; color: #94a3b8; padding: 80px 20px; text-align: center; margin-top: 100px; }
+
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 2rem; }
+            .nav-container { flex-direction: column; gap: 15px; }
+            nav ul { font-size: 0.75rem; justify-content: center; }
+            .quiz-item { flex-direction: column; text-align: center; }
+            .rule-hero h1 { font-size: 2rem; }
+        }
     </style>
 </head>
 <body>
@@ -83,48 +87,47 @@
     <div class="nav-container">
         <div class="logo"><h1>🛡️ КиберЩит</h1></div>
         <nav>
-            <ul id="nav-list">
-                <li><a onclick="showPage('home')" class="active">Главная</a></li>
-                <li><a onclick="showPage('schemes')">Схемы</a></li>
-                <li><a onclick="showPage('psychology')">Самооборона</a></li>
-                <li><a onclick="showPage('fakes')">Подделки</a></li>
-                <li><a onclick="showPage('help')">Помощь</a></li>
+            <ul>
+                <li><a onclick="showPage('home')" class="active" id="nav-home">Главная</a></li>
+                <li><a onclick="showPage('schemes')" id="nav-schemes">Схемы</a></li>
+                <li><a onclick="showPage('psychology')" id="nav-psychology">Самооборона</a></li>
+                <li><a onclick="showPage('fakes')" id="nav-fakes">Подделки</a></li>
+                <li><a onclick="showPage('help')" id="nav-help">Помощь</a></li>
             </ul>
         </nav>
         <button class="btn-senior" onclick="toggleSenior()">👵 Для пожилых</button>
     </div>
 </header>
 
-<!-- ГЛАВНАЯ СТРАНИЦА -->
+<!-- ГЛАВНАЯ -->
 <section id="home" class="active">
-    <div class="hero-section">
-        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200" class="hero-img" alt="Security Background">
-        <div class="hero-content reveal active">
-            <h2>Твой разум — лучшая<br>линия обороны.</h2>
-            <p>Мошенники 2026 года используют биологические уязвимости твоего мозга. Узнай, как распознать атаку и сохранить контроль. Индивидуальный проект Кирилла Лещенко.</p>
-            <button class="btn btn-primary" onclick="window.scrollTo({top: 700, behavior: 'smooth'})">Начать экспресс-тест ↓</button>
+    <div class="hero reveal active">
+        <div class="container">
+            <h2>🛡️ Вам только что позвонили или написали что-то подозрительное?</h2>
+            <p>Пройдите быстрый тест — за 30 секунд узнайте, пытаются ли вас обмануть. На основе данных МВД РФ, ВЦИОМ и работ по психологии манипуляций.</p>
+            <button class="btn btn-primary" onclick="window.scrollTo({top: 600, behavior: 'smooth'})" style="background:var(--primary); color:white; padding:18px 40px; border-radius:50px; font-weight:800; border:none; cursor:pointer;">Пройти экспресс-тест →</button>
         </div>
     </div>
 
     <div class="container">
-        <div class="quiz-box reveal active">
-            <h2 style="text-align: center; font-size: 2.5rem; color: var(--primary); margin-bottom: 10px;">⚡ Это мошенничество?</h2>
-<p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">Проверьте ваш случай за 30 секунд прямо сейчас.</p>
-            <div id="quiz-list"></div>
-            <div style="text-align: center; margin-top: 50px;">
-                <button class="btn btn-primary" onclick="runQuiz()">Получить заключение</button>
+        <div class="quiz-card reveal active">
+            <h2 style="text-align: center; margin-bottom: 10px; color: var(--primary);">⚡ Экспресс-диагностика: это мошенничество?</h2>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 30px;">Ответьте «Да» или «Нет» на 5 вопросов. Каждый ответ «Да» — это тревожный сигнал.</p>
+<div id="quiz-list"></div>
+            <div style="text-align: center; margin-top: 40px;">
+                <button class="btn btn-primary" onclick="runQuiz()" style="background:var(--secondary); color:white; padding:15px 40px; border-radius:50px; border:none; font-weight:800; cursor:pointer;">Проверить ситуацию</button>
             </div>
-            <div id="quiz-result" style="margin-top: 40px; padding: 40px; border-radius: 30px; display: none; text-align: center; font-size: 1.3rem;"></div>
+            <div id="quiz-result" style="margin-top: 30px; padding: 30px; border-radius: 20px; display: none; text-align: center; font-weight: bold;"></div>
         </div>
 
-        <div class="grid reveal active" style="margin-top: 100px;">
+        <div class="grid reveal active" style="margin-top: 80px;">
             <div class="card">
-                <h3>90% атак</h3>
-                <p>происходят через методы психологической суггестии. Мошенники не взламывают ваши пароли — они взламывают ваше состояние спокойствия.</p>
+                <h3 style="font-size:3rem; color:var(--secondary);">86%</h3>
+                <p>россиян знают правила безопасности, но всё равно теряют деньги (Данные Банка России).</p>
             </div>
             <div class="card">
-                <h3>8,2 млрд ₽</h3>
-                <p>потеряно гражданами РФ за начало 2025 года. Большинство операций подтверждены самими пользователями под давлением.</p>
+                <h3 style="font-size:3rem; color:var(--secondary);">90%+</h3>
+                <p>успешных атак происходит через психологическое воздействие, а не технический взлом.</p>
             </div>
         </div>
     </div>
@@ -132,33 +135,75 @@
 
 <!-- СХЕМЫ ОБМАНА -->
 <section id="schemes" class="container">
-    <h2 class="section-title reveal active">🎭 Анатомия современных схем</h2>
-    <p style="text-align:center; margin-bottom:60px;">Мошенники подстраивают сценарии под ваши страхи и интересы.</p>
+    <h2 class="section-title reveal active">🔍 Схемы обмана: узнайте мошенника заранее</h2>
+    <p style="text-align: center; margin-bottom: 40px;">Мошенники адаптируют приёмы под ваш возраст и интересы.</p>
 
-    <div class="grid">
-        <div class="card reveal active">
-            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=600" class="card-img" alt="Gaming">
-            <span class="tag">9–17 лет</span>
-            <h3>🎮 Игровой скам</h3>
-            <p><strong>📋 Механика:</strong> Сообщение в Discord: «Админ дарит 10 000 робуксов первым 5 игрокам». Требуется подтвердить возраст через карту родителя.</p>
-            <div class="example-box">Психология: Эффект дефицита («Осталось 3 места!») блокирует критическое мышление.</div>
-            <p style="color:var(--accent); font-weight:800;">🚩 Красный флаг: Просьба назвать цифры с обратной стороны карты.</p>
+    <!-- Дети -->
+    <div class="reveal active">
+        <h3 style="margin-bottom:20px; color:var(--primary);">🎮 Дети и подростки (9–17 лет)</h3>
+        <div class="card">
+            <div class="img-wrap"><img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=800"></div>
+            <h4>Обман в онлайн-играх</h4>
+            <p><strong>📋 Как действуют:</strong> Пишут в Discord или соцсетях от имени админа. Предлагают «бесплатную валюту», «редкие скины» за «подтверждение возраста» через карту мамы.</p>
+            <div class="example-box">📖 Пример: Подростку 14 лет предложили «прокачку». Попросили данные карты мамы «для возраста». Списали 15 000 ₽.</div>
+            <ul class="red-flag-list">
+                <li>🚩 Предложение бесплатных ценностей от незнакомца</li>
+                <li>🚩 Просьба назвать данные родительской карты</li>
+                <li>🚩 Требование оплатить «комиссию» за получение приза</li>
+            </ul>
+            <div class="check-step">✅ Что делать: Никогда не вводи данные карт на незнакомых сайтах. Спроси родителей.</div>
         </div>
-
-        <div class="card reveal active">
-            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=600" class="card-img" alt="Work">
-            <span class="tag">18–25 лет</span>
-            <h3>💼 Фейковая работа</h3>
-            <p><strong>📋 Механика:</strong> Вакансия «Байер маркетплейсов». Нужно выкупать товары для рейтинга. Сначала возвращают 500р прибыли, потом крадут залог в 50 000р.</p>
-            <div class="example-box">Психология: Принцип последовательности (Малое согласие → Большое вложение).</div>
+        <div class="card">
+            <h4>Фальшивые подработки</h4>
+            <p><strong>📋 Как действуют:</strong> «Ставь лайки за 5000 ₽ в день». Могут вовлечь в дропперство — оформление карт для отмывания денег (уголовная статья!).</p>
+            <div class="check-step">✅ Что делать: За настоящую работу платят ТЕБЕ, а не ТЫ. Расскажи родителям.</div>
         </div>
+    </div>
 
-        <div class="card reveal active" style="border-top-color:var(--warning);">
-            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=600" class="card-img" alt="Elderly">
-            <span class="tag">61+ год</span>
-            <h3>👴 Родственник в беде</h3>
-            <p><strong>📋 Механика:</strong> Звонок ночью: «Мама, я в полиции, срочно нужны деньги следователю, сейчас приедет человек». Голос специально искажен плачем.</p>
-            <div class="example-box">Психология: Окситоциновая атака (страх за ребенка отключает префронтальную кору).</div>
+    <!-- Молодые -->
+    <div class="reveal active" style="margin-top:50px;">
+        <h3 style="margin-bottom:20px; color:var(--primary);">💼 Молодые люди (18–25 лет)</h3>
+        <div class="card">
+            <div class="img-wrap"><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=800"></div>
+            <h4>Взлом Госуслуг</h4>
+            <p><strong>📋 Как действуют:</strong> SMS о «взломе». Просят назвать код из SMS якобы для защиты. На деле этот код дает мошенникам доступ к аккаунту.</p>
+            <div class="check-step">✅ Что делать: Не звони по номерам из SMS. Зайди на gosuslugi.ru напрямую. Код — это ключ, его нельзя называть.</div>
+        </div>
+        <div class="card">
+            <h4>Сайты знакомств</h4>
+            <p><strong>📋 Как действуют:</strong> Вызывают симпатию, потом просят деньги «на билет», «на лечение» или «подарок».</p>
+            <div class="check-step">✅ Что делать: Предложи видеозвонок — мошенник откажется.</div>
+        </div>
+    </div>
+
+    <!-- Взрослые -->
+<div class="reveal active" style="margin-top:50px;">
+        <h3 style="margin-bottom:20px; color:var(--primary);">📈 Взрослые (26–40 лет)</h3>
+        <div class="card">
+            <h4>Фальшивые инвестиции</h4>
+            <p><strong>📋 Как действуют:</strong> Сайты с фейковыми графиками прибыли. Сначала дают заработать немного, потом убеждают вложить всё.</p>
+            <div class="example-box">📖 Пример: Мужчина вложил 10к, увидел прибыль 3к. Вложил еще 200к — сайт исчез.</div>
+            <ul class="red-flag-list">
+                <li>🚩 Гарантированная доходность выше 21% годовых</li>
+                <li>🚩 Отсутствие лицензии ЦБ РФ на сайте cbr.ru</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4>Звонок из «Центробанка»</h4>
+            <p><strong>📋 Как действуют:</strong> «Ваши деньги пытаются перевести за рубеж. Срочно переведите их на безопасный счет».</p>
+            <div class="check-step">✅ Что делать: Положи трубку. «Безопасных счетов» не существует в природе.</div>
+        </div>
+    </div>
+
+    <!-- Пожилые -->
+    <div class="reveal active" style="margin-top:50px;">
+        <h3 style="margin-bottom:20px; color:var(--primary);">👴 Пожилые люди (61+ лет)</h3>
+        <div class="card" style="border-top-color: var(--warning);">
+            <div class="img-wrap"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800"></div>
+            <h4>«Родственник в беде»</h4>
+            <p><strong>📋 Как действуют:</strong> Ночной звонок плачущим голосом: «Бабушка, я в аварии, нужны деньги следователю». Срочно просят передать деньги курьеру.</p>
+            <div class="example-box">📖 Пример: Пенсионерка 74 лет отдала курьеру 300 000 ₽ ночью. Внук в это время спал дома.</div>
+            <div class="check-step">✅ Что делать: ПОЛОЖИТЕ ТРУБКУ. Позвоните родственнику на его НАСТОЯЩИЙ номер.</div>
         </div>
     </div>
 </section>
@@ -167,54 +212,58 @@
 <section id="psychology" class="container">
     <h2 class="section-title reveal active">🧠 Психологическая самооборона</h2>
     
-    <div class="card reveal active" style="border-left: 10px solid var(--primary);">
-        <h3>Система 1 и Система 2 (Д. Канеман)</h3>
-        <p>Наш мозг работает в двух режимах. Мошенники — мастера переключения этих систем.</p>
-        <div class="grid" style="margin-top:30px;">
-            <div style="background:#fef2f2; padding:30px; border-radius:20px;">
-                <h4 style="color:var(--accent); margin-bottom:10px;">🔴 Система 1 (Эмоции)</h4>
-<p>Быстрая, автоматическая. Она включается, когда вам страшно. Мошенник специально пугает вас, чтобы вы не успели подумать.</p>
+    <div class="card reveal active">
+        <h3>Почему даже умные люди попадаются?</h3>
+        <p>Нобелевский лауреат <strong>Даниэль Канеман</strong> доказал, что мозг работает в двух режимах:</p>
+        <div class="grid" style="margin-top:20px;">
+            <div style="background:#fef2f2; padding:25px; border-radius:20px;">
+                <h4 style="color:var(--accent);">Система 1 — Быстрая</h4>
+                <p>Эмоции, страх, инстинкты. Она включается при панике. Мошенники пугают вас, чтобы вы не успели подумать.</p>
             </div>
-            <div style="background:#f0fdf4; padding:30px; border-radius:20px;">
-                <h4 style="color:var(--success); margin-bottom:10px;">🟢 Система 2 (Логика)</h4>
-                <p>Медленная, аналитическая. Именно она может распознать обман. Для её включения нужно ВРЕМЯ и ТИШИНА.</p>
+            <div style="background:#f0fdf4; padding:25px; border-radius:20px;">
+                <h4 style="color:var(--success);">Система 2 — Медленная</h4>
+                <p>Логика, расчет. Она способна распознать обман, но требует ВРЕМЕНИ и покоя. Мошенники всегда торопят вас.</p>
             </div>
         </div>
+    </div>
+
+    <h3 style="text-align:center; margin:60px 0 30px;">⚙️ 6 ловушек мошенников</h3>
+    <div class="grid reveal active">
+        <div class="card"><h4>1. Срочность</h4><p>«У вас 5 минут!». Мозг отключает логику в спешке.</p></div>
+        <div class="card"><h4>2. Авторитет</h4><p>«Я капитан ФСБ». Мы приучены подчиняться форме.</p></div>
+        <div class="card"><h4>3. Соц. доказательство</h4><p>«Все уже перевели деньги». Создается иллюзия безопасности.</p></div>
+        <div class="card"><h4>4. Эффект ореола</h4><p>Красивый сайт или уверенный голос создают веру в честность.</p></div>
+        <div class="card"><h4>5. Эвристика доступности</h4><p>Страх на основе пугающих новостей из ТВ/интернета.</p></div>
+        <div class="card"><h4>6. Склонность к подтверждению</h4><p>Мы ищем оправдание своему страху и верим лжи.</p></div>
     </div>
 
     <div class="rule-hero reveal active">
-        <h3>УНИВЕРСАЛЬНЫЙ АЛГОРИТМ</h3>
+        <h3>ГЛАВНЫЙ АЛГОРИТМ</h3>
         <h1>СТОП → ПАУЗА → ПРОВЕРКА</h1>
-        <p style="font-size: 1.5rem; opacity: 0.9;">Положите трубку. Ничего не случится за 15 минут. Это время нужно, чтобы включился ваш разум.</p>
-    </div>
-
-    <div class="grid">
-        <div class="card">
-            <h4>Эффект Авторитета</h4>
-            <p>«Я капитан МВД», «Звонок из Центробанка». Мы приучены подчиняться форме. Помните: настоящие органы вызывают повесткой, а не по телефону.</p>
-        </div>
-        <div class="card">
-            <h4>Дефицит времени</h4>
-            <p>«У вас 5 минут, иначе счет заблокируют». Спешка — главный инструмент мошенника. Лекарство: Сказать «Я перезвоню сам».</p>
-        </div>
+<p style="font-size: 1.3rem; opacity: 0.9;">Положите трубку. Ничего не случится за 15 минут. Это время нужно, чтобы включился ваш разум.</p>
     </div>
 </section>
 
 <!-- ПОДДЕЛКИ -->
 <section id="fakes" class="container">
-    <h2 class="section-title reveal active">🤖 Дипфейки и ИИ-подделки</h2>
-    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1000" class="card-img" style="height:400px;" alt="AI">
+    <h2 class="section-title reveal active">🤖 Дипфейки и нейросети</h2>
+    <div class="img-wrap" style="height:400px;"><img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1000"></div>
     
     <div class="grid">
         <div class="card danger">
-            <h3>Клон голоса (Audio Deepfake)</h3>
-            <p>В 2026 году ИИ копирует голос за 20 секунд. Вы услышите родную мать или друга. <br><br><strong>Маркеры ИИ:</strong><br>— Нет фонового шума.<br>— Странные вдохи в середине слов.<br>— Механический тембр на высоких нотах.</p>
-            <div style="margin-top:20px; font-weight:bold; color:var(--primary);">✅ Проверка: Задайте вопрос, ответ на который нейросеть не знает (какого цвета у нас шторы?).</div>
+            <h3>🎥 Дипфейк-видео и аудио</h3>
+            <p>ИИ копирует голос за 20 секунд записи. <strong>Как узнать ИИ?</strong></p>
+            <ul>
+                <li>— Нет фонового шума (слишком чистый голос).</li>
+                <li>— Странные вдохи в середине слов или их отсутствие.</li>
+                <li>— Лицо в видео «плывет», губы не синхронны.</li>
+            </ul>
+            <div class="check-step">✅ Проверка: Задайте вопрос, ответ на который знает только этот человек.</div>
         </div>
         <div class="card">
-            <h3>🌐 Фишинговые сайты</h3>
-            <p>Копии <strong>Ozon, Госуслуг и Т-Банка</strong>. Адрес отличается на 1 символ: <strong>gos-uslugi-vhod.ru</strong> вместо <strong>gosuslugi.ru</strong>.</p>
-            <p style="margin-top:20px; color:var(--accent); font-weight:800;">✅ Решение: Не переходите по ссылкам из SMS. Вводите адрес вручную.</p>
+            <h3>🌐 Фишинг</h3>
+            <p>Сайты-двойники <strong>ozon-sale.ru</strong> вместо <strong>ozon.ru</strong>. Дизайн похож, но в адресе ошибка.</p>
+            <div class="check-step">✅ Проверка: Вводите адрес сайта вручную, не жмите на ссылки из SMS.</div>
         </div>
     </div>
 </section>
@@ -223,64 +272,74 @@
 <section id="help" class="container">
     <h2 class="section-title reveal active">🆘 Экстренная помощь</h2>
     
-    <div class="card reveal active" style="border-top: 10px solid var(--accent); background: #fff1f2;">
-        <h2 style="color:var(--accent); font-size: 2.5rem; margin-bottom:20px;">Если деньги уже ушли:</h2>
-        <ol style="margin-left: 20px; font-weight: 700; font-size: 1.3rem;">
-            <li>СРОЧНО блокируйте карту в приложении или по телефону.</li>
-            <li>Звоните 112 (Полиция). Без КУСП (номера заявления) банк не начнет возврат.</li>
-            <li>Напишите заявление в банке о несогласии с операцией (в течение 24ч).</li>
-            <li>Смените ВСЕ пароли на Госуслугах и в банках.</li>
+    <div class="card reveal active" style="border-top-color: var(--accent); background: #fff1f2;">
+        <h2 style="color:var(--accent); margin-bottom:20px;">Если общаются ПРЯМО СЕЙЧАС:</h2>
+        <ol style="margin-left:20px; font-weight: 700; font-size: 1.2rem;">
+            <li>ПОЛОЖИТЕ ТРУБКУ — немедленно, не прощаясь.</li>
+            <li>НЕ ПЕРЕЗВАНИВАЙТЕ на этот же номер.</li>
+            <li>РАССКАЖИТЕ БЛИЗКИМ — мошенники боятся огласки.</li>
         </ol>
     </div>
 
-    <div class="grid" style="margin-top:60px; text-align:center;">
-        <div class="card"><h4>Полиция</h4><p style="font-size:2.5rem; font-weight:900;">112</p></div>
-        <div class="card"><h4>Банк России</h4><p style="font-size:1.8rem; font-weight:900;">8-800-300-30-00</p></div>
-        <div class="card"><h4>Госуслуги</h4><p style="font-size:1.8rem; font-weight:900;">8-800-100-70-10</p></div>
+    <div class="card reveal active">
+        <h3>Если деньги уже ушли:</h3>
+        <ol style="margin-left: 20px; margin-top: 15px;">
+            <li>1. Срочно <strong>блокируйте карту</strong> в приложении или по телефону 900.</li>
+            <li>2. Звоните в <strong>полицию (112)</strong>. Без номера заявления банк не начнет возврат.</li>
+            <li>3. Напишите в банке «Заявление о несогласии с операцией» в течение 24 часов.</li>
+            <li>4. Смените пароли на Госуслугах и в банках.</li>
+        </ol>
+    </div>
+
+    <div class="reveal active" style="margin-top:60px; text-align:center;">
+        <h3>📞 Экстренные контакты</h3>
+        <div class="grid" style="margin-top:20px;">
+            <div class="card"><h4>Полиция</h4><p style="font-size:2rem; font-weight:900;">112</p></div>
+            <div class="card"><h4>Банк России</h4><p style="font-size:1.5rem; font-weight:900;">8-800-300-30-00</p></div>
+            <div class="card"><h4>Госуслуги</h4><p style="font-size:1.5rem; font-weight:900;">8-800-100-70-10</p></div>
+        </div>
     </div>
 </section>
 
 <footer>
     <div class="container">
-        <div class="footer-logo">🛡️ КиберЩит</div>
-        <p style="font-size: 1.2rem; margin-bottom: 30px;">Индивидуальный итоговый проект</p>
-<div style="font-size: 0.8rem; opacity: 0.5; max-width:800px; margin: 0 auto; line-height: 1.4;">
-            Источники: МВД РФ (mvd.rf) | Центральный Банк РФ (cbr.ru) | Канеман Д. «Думай медленно...» | Чалдини Р. «Психология влияния» | ВЦИОМ (2026)
+        <h2>🛡️ КиберЩит — 2026</h2>
+        <p style="margin: 15px 0;">Индивидуальный итоговый проект | 10-3 класс | Лещенко К.А.</p>
+        <div style="font-size: 0.8rem; opacity: 0.5; max-width: 600px; margin: 0 auto;">
+            Проект создан на основе данных МВД РФ, ВЦИОМ, Банка России. <br>
+            Литература: Д. Канеман «Думай медленно…», Р. Чалдини «Психология влияния».
         </div>
     </div>
 </footer>
 
-<a href="tel:112" class="sos-float">SOS<br>112</a>
+<a href="tel:112" class="sos-btn">SOS<br>112</a>
 
 <script>
-    /* --- NAVIGATION --- */
+    /* --- LOGIC --- */
     function showPage(id) {
         document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
         document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
         document.getElementById(id).classList.add('active');
-        const links = document.querySelectorAll('nav a');
-        links.forEach(l => { if(l.innerText.toLowerCase().includes(id === 'psychology' ? 'самооборона' : id)) l.classList.add('active'); });
-        window.scrollTo(0,0);
-        refreshReveal();
+        document.getElementById('nav-' + id).classList.add('active');
+        window.scrollTo(0,0);refreshReveal();
     }
 
-    /* --- QUIZ --- */
     const questions = [
-        "Вам позвонили или написали ПЕРВЫМИ без вашего запроса?",
-        "Собеседник ПУГАЕТ вас или требует решить всё 'прямо сейчас'?",
+        "Звонок или сообщение поступили НЕОЖИДАННО?",
+        "Вас ПУГАЮТ или СРОЧНО торопят («у вас 5 минут!»)?",
         "Просят ПЕРЕВЕСТИ деньги или назвать код из сообщения?",
-        "Просят сохранить разговор В ТАЙНЕ от родных и близких?",
+        "Просят сохранить разговор В ТАЙНЕ от родных?",
         "Обещают БЕСПЛАТНЫЙ выигрыш или огромную выгоду?"
     ];
 
-    const quizList = document.getElementById('quiz-list');
+    const qList = document.getElementById('quiz-list');
     let answers = new Array(questions.length).fill(null);
 
     questions.forEach((q, i) => {
         const item = document.createElement('div');
         item.className = 'quiz-item reveal';
         item.innerHTML = `<p>${q}</p><div class="q-btns"><button class="q-btn yes" onclick="setAns(${i},true,this)">Да</button><button class="q-btn no" onclick="setAns(${i},false,this)">Нет</button></div>`;
-        quizList.appendChild(item);
+        qList.appendChild(item);
     });
 
     function setAns(i, v, b) {
@@ -295,23 +354,28 @@
         res.style.display = 'block';
         if (score >= 3) {
             res.style.background = '#fee2e2'; res.style.color = '#b91c1c';
-            res.innerHTML = "<h2>🚨 ЭТО МОШЕННИКИ!</h2><p>Положите трубку немедленно. Никаких кодов и переводов. Это классическая атака.</p>";
+            res.innerHTML = "<h2>🚨 ЭТО МОШЕННИКИ!</h2><p>Положите трубку. Не называйте никаких кодов и не переводите деньги.</p>";
         } else if (score >= 1) {
             res.style.background = '#fef3c7'; res.style.color = '#92400e';
-            res.innerHTML = "<h2>⚠️ ПОДОЗРИТЕЛЬНО</h2><p>Не принимайте решений на эмоциях. Перезвоните сами в организацию по официальному номеру.</p>";
+            res.innerHTML = "<h2>⚠️ СИТУАЦИЯ ПОДОЗРИТЕЛЬНАЯ</h2><p>Перезвоните сами в организацию по официальному номеру.</p>";
         } else {
             res.style.background = '#dcfce7'; res.style.color = '#166534';
-            res.innerHTML = "<h2>✅ ВСЁ В ПОРЯДКЕ</h2><p>Но всегда сохраняйте бдительность и помните правило СТОП-ПАУЗА-ПРОВЕРКА.</p>";
+            res.innerHTML = "<h2>✅ ПОХОЖЕ, ВСЁ В ПОРЯДКЕ</h2><p>Но всегда помните правило СТОП-ПАУЗА-ПРОВЕРКА.</p>";
         }
     }
 
-    /* --- UI --- */
-    function toggleSenior() { 
-    document.body.classList.toggle('senior-mode');
-    const btn = document.querySelector('.btn-senior');
-    // Если режим включен - пишем "Обычный шрифт", если нет - "Для пожилых"
-    btn.innerText = document.body.classList.contains('senior-mode') ? "Обычный шрифт" : "👵 Для пожилых";
-}
+    function toggleSenior() {
+        document.body.classList.toggle('senior-mode');
+        const btn = document.querySelector('.btn-senior');
+        btn.innerText = document.body.classList.contains('senior-mode') ? "Обычный шрифт" : "👵 Для пожилых";
+    }
+
+    const obs = new IntersectionObserver((es) => {
+        es.forEach(e => { if(e.isIntersecting) e.target.classList.add('active'); });
+    }, {threshold: 0.1});
+
+    function refreshReveal() { document.querySelectorAll('.reveal').forEach(el => obs.observe(el)); }
+    refreshReveal();
 </script>
 
 </body>
