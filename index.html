@@ -91,7 +91,7 @@
                 <li><a onclick="showPage('help')">Помощь</a></li>
             </ul>
         </nav>
-        <button class="btn-senior" onclick="toggleSenior()">👵 Senior Mode</button>
+        <button class="btn-senior" onclick="toggleSenior()">👵 Для пожилых</button>
     </div>
 </header>
 
@@ -306,11 +306,12 @@
     }
 
     /* --- UI --- */
-    function toggleSenior() { document.body.classList.toggle('senior-mode'); }
-
-    const obs = new IntersectionObserver((es) => { es.forEach(e => { if(e.isIntersecting) e.target.classList.add('active'); }); }, {threshold: 0.1});
-    function refreshReveal() { document.querySelectorAll('.reveal').forEach(el => obs.observe(el)); }
-    refreshReveal();
+    function toggleSenior() { 
+    document.body.classList.toggle('senior-mode');
+    const btn = document.querySelector('.btn-senior');
+    // Если режим включен - пишем "Обычный шрифт", если нет - "Для пожилых"
+    btn.innerText = document.body.classList.contains('senior-mode') ? "Обычный шрифт" : "👵 Для пожилых";
+}
 </script>
 
 </body>
