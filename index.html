@@ -14,21 +14,21 @@
         }
         body {
             font-family: 'Inter', sans-serif;
-            background: #F0F4F8;
-            color: #1E2A3E;
+            background: #F4F9F6;
+            color: #1F2E2C;
             line-height: 1.5;
             scroll-behavior: smooth;
             position: relative;
         }
-        /* Декоративные абстрактные фоновые элементы (псевдокартинки) */
+        /* декоративные фоновые элементы */
         body::before {
             content: '';
             position: fixed;
-            top: 20%;
-            left: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(44,90,122,0.08) 0%, rgba(0,0,0,0) 70%);
+            top: 15%;
+            left: -5%;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(27,122,92,0.06) 0%, rgba(0,0,0,0) 70%);
             border-radius: 50%;
             pointer-events: none;
             z-index: -1;
@@ -40,7 +40,7 @@
             right: -5%;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(74,124,158,0.05) 0%, rgba(0,0,0,0) 70%);
+            background: radial-gradient(circle, rgba(230,168,23,0.04) 0%, rgba(0,0,0,0) 70%);
             border-radius: 50%;
             pointer-events: none;
             z-index: -1;
@@ -56,19 +56,19 @@
             padding: 0 24px;
         }
         :root {
-            --primary-dark: #1A3A4F;
-            --primary: #2C5A7A;
-            --primary-light: #4A7C9E;
-            --accent: #3A6B8C;
-            --accent-light: #7EA9C4;
+            --primary-dark: #0F4C3F;
+            --primary: #1B7A5C;
+            --primary-light: #3D9A7C;
+            --accent: #E6A817;
+            --accent-light: #F5D48B;
             --bg-light: #FFFFFF;
-            --text-dark: #1E2A3E;
+            --text-dark: #1F2E2C;
             --shadow: 0 12px 25px rgba(0, 0, 0, 0.05);
         }
         .header {
             background: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid #DCE5ED;
+            border-bottom: 1px solid #DCE6E2;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -119,19 +119,18 @@
         .hero {
             text-align: center;
             padding: 80px 0 60px;
-            background: linear-gradient(135deg, #EAF2F8 0%, #FFFFFF 100%);
+            background: linear-gradient(135deg, #E8F4EF 0%, #FFFFFF 100%);
             position: relative;
             overflow: hidden;
         }
-        /* Абстрактные формы в герое */
         .hero::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -20%;
-            width: 300px;
-            height: 300px;
-            background: rgba(44,90,122,0.1);
+            top: -40%;
+            left: -10%;
+            width: 350px;
+            height: 350px;
+            background: rgba(27,122,92,0.08);
             border-radius: 50%;
             filter: blur(60px);
             z-index: 0;
@@ -165,11 +164,11 @@
         }
         .hero-icon {
             font-size: 3.5rem;
-            color: var(--primary);
+            color: var(--accent);
             margin-top: 30px;
             animation: gentleFloat 3s ease-in-out infinite;
         }
-        /* строка с анимацией печати */
+        /* печатающаяся строка */
         .typing-container {
             min-height: 4rem;
             margin-bottom: 1rem;
@@ -192,7 +191,7 @@
         }
         section {
             padding: 70px 0;
-            border-bottom: 1px solid #DCE5ED;
+            border-bottom: 1px solid #DCE6E2;
             position: relative;
             z-index: 1;
         }
@@ -208,7 +207,7 @@
             display: block;
             width: 80px;
             height: 3px;
-            background: var(--primary);
+            background: var(--accent);
             margin: 12px auto 0;
             border-radius: 2px;
         }
@@ -238,7 +237,7 @@
         .stat-number {
             font-size: 2.6rem;
             font-weight: 700;
-            color: var(--primary);
+            color: var(--accent);
             font-family: 'Playfair Display', serif;
         }
         .diagnostic-box {
@@ -247,7 +246,7 @@
             padding: 32px;
         }
         .question {
-            background: #F4F8FC;
+            background: #F4F9F6;
             border-radius: 24px;
             padding: 20px;
             margin: 20px 0;
@@ -277,7 +276,7 @@
             font-weight: 500;
         }
         .verdict.red { background: #FEF1F0; border-left: 4px solid #C85C4A; color: #7A2E1F; }
-        .verdict.yellow { background: #FFF7E0; border-left: 4px solid #E6B422; color: #8A6B1C; }
+        .verdict.yellow { background: #FFF7E0; border-left: 4px solid var(--accent); color: #8A6B1C; }
         .verdict.green { background: #E0F0EA; border-left: 4px solid var(--primary); color: #1C4F1F; }
         .tabs {
             display: flex;
@@ -324,10 +323,11 @@
             left: 0;
             top: 2px;
             color: var(--primary);
+            font-size: 1.1rem;
         }
         .methods-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 28px;
             margin: 40px 0;
         }
@@ -336,7 +336,7 @@
             text-align: left;
         }
         .method-card i {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: var(--primary);
             margin-bottom: 15px;
             display: block;
@@ -347,6 +347,7 @@
             display: block;
             text-align: center;
             margin-bottom: 10px;
+            color: var(--primary-dark);
         }
         .method-card p {
             margin-top: 8px;
@@ -366,8 +367,8 @@
             text-align: center;
         }
         .step-icon {
-            font-size: 3rem;
-            color: var(--primary);
+            font-size: 2.8rem;
+            color: var(--accent);
             margin-bottom: 15px;
         }
         .help-buttons {
@@ -395,8 +396,8 @@
             transform: scale(1.02);
         }
         .help-btn.emergency {
-            background: var(--primary);
-            color: white;
+            background: var(--accent);
+            color: var(--primary-dark);
         }
         .feedback-form {
             max-width: 550px;
@@ -405,8 +406,8 @@
         }
         input, textarea {
             width: 100%;
-            background: #F4F8FC;
-            border: 1px solid #DCE5ED;
+            background: #F4F9F6;
+            border: 1px solid #DCE6E2;
             padding: 14px;
             border-radius: 50px;
             margin: 12px 0;
@@ -429,26 +430,24 @@
         .footer {
             text-align: center;
             padding: 40px 0;
-            background: #EAF2F8;
+            background: #E8F4EF;
             margin-top: 20px;
         }
-        .stat-card, .card, .method-card, .step {
-            animation: fadeUp 0.5s ease forwards;
+        /* анимация появления при прокрутке */
+        .fade-on-scroll {
             opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .fade-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
-        .stat-card:nth-child(1) { animation-delay: 0.1s; }
-        .stat-card:nth-child(2) { animation-delay: 0.2s; }
-        .stat-card:nth-child(3) { animation-delay: 0.3s; }
-        .method-card:nth-child(1) { animation-delay: 0.05s; }
-        .method-card:nth-child(2) { animation-delay: 0.1s; }
-        .method-card:nth-child(3) { animation-delay: 0.15s; }
-        .method-card:nth-child(4) { animation-delay: 0.2s; }
-        .method-card:nth-child(5) { animation-delay: 0.25s; }
-        .method-card:nth-child(6) { animation-delay: 0.3s; }
+        /* отключение анимации у заголовков и базовых блоков, чтобы не мешать */
+        .section-title, .hero, .header, .footer {
+            opacity: 1;
+            transform: none;
+        }
         body.elder-mode {
             font-size: 20px;
         }
@@ -505,12 +504,12 @@
     <section style="padding: 40px 0 20px;">
         <div class="container">
             <div class="stats-grid">
-                <div class="stat-card"><div class="stat-number">280 млрд ₽</div><div>потеряли россияне в 2025</div><div style="font-size:0.85rem;">оценка Сбера</div></div>
-                <div class="stat-card"><div class="stat-number">94%</div><div>сталкивались с мошенниками</div><div style="font-size:0.85rem;">ВЦИОМ, 2025</div></div>
-                <div class="stat-card"><div class="stat-number">>90%</div><div>атак — через психологию</div><div style="font-size:0.85rem;">социальная инженерия</div></div>
+                <div class="stat-card fade-on-scroll"><div class="stat-number">280 млрд ₽</div><div>потеряли россияне в 2025</div><div style="font-size:0.85rem;">оценка Сбера</div></div>
+                <div class="stat-card fade-on-scroll"><div class="stat-number">94%</div><div>сталкивались с мошенниками</div><div style="font-size:0.85rem;">ВЦИОМ, 2025</div></div>
+                <div class="stat-card fade-on-scroll"><div class="stat-number">>90%</div><div>атак — через психологию</div><div style="font-size:0.85rem;">социальная инженерия</div></div>
             </div>
-            <div class="quote-block" style="padding: 24px;">
-                <i class="fas fa-quote-left" style="color: var(--primary); margin-right: 12px;"></i> «В стрессе миндалевидное тело блокирует префронтальную кору — логика отключается. Единственное спасение — пауза».<br>— Ольга Медяник, СПбГУ, нейрофизиология финансовой суггестии (2025)
+            <div class="quote-block fade-on-scroll" style="padding: 24px;">
+                <i class="fas fa-quote-left" style="color: var(--accent); margin-right: 12px;"></i> «В стрессе миндалевидное тело блокирует префронтальную кору — логика отключается. Единственное спасение — пауза».<br>— Ольга Медяник, СПбГУ, нейрофизиология финансовой суггестии (2025)
             </div>
         </div>
     </section>
@@ -519,7 +518,7 @@
     <section id="diagnostic">
         <div class="container">
             <h2 class="section-title">Экспресс-диагностика</h2>
-            <div class="diagnostic-box">
+            <div class="diagnostic-box fade-on-scroll">
                 <div id="questionsContainer"></div>
                 <div id="verdictResult" class="verdict"></div>
                 <div style="text-align:center; margin-top:20px;">
@@ -529,7 +528,7 @@
         </div>
     </section>
 
-    <!-- Расширенные схемы обмана по возрастам -->
+    <!-- РАСШИРЕННЫЕ СХЕМЫ ОБМАНА ПО ВОЗРАСТАМ -->
     <section id="schemes">
         <div class="container">
             <h2 class="section-title">Схемы обмана по возрастам</h2>
@@ -538,61 +537,64 @@
                 <button class="tab-btn" data-tab="tab2"><i class="fas fa-user-graduate"></i> 18–40 лет</button>
                 <button class="tab-btn" data-tab="tab3"><i class="fas fa-user-plus"></i> 45+ лет</button>
             </div>
-            <div id="tab1" class="tab-content active">
+            <div id="tab1" class="tab-content active fade-on-scroll">
                 <ul class="scheme-list">
-                    <li><i class="fas fa-gamepad"></i> <strong>«Бесплатная валюта» в играх</strong> — просят данные карты родителей под видом подтверждения.</li>
-                    <li><i class="fas fa-gift"></i> <strong>Фейковые розыгрыши в TikTok/Telegram</strong> — оплати доставку и останешься ни с чем.</li>
-                    <li><i class="fas fa-exclamation-triangle"></i> <strong>Угрозы блокировки аккаунта</strong> — требуют деньги за сохранение страницы.</li>
-                    <li><i class="fas fa-coins"></i> <strong>Дропперство</strong> — «лёгкий заработок» за оформление карты, соучастие в преступлении.</li>
-                    <li><i class="fas fa-robot"></i> <strong>Поддельные боты в Discord</strong> — выманивают пароль под видом розыгрыша.</li>
+                    <li><i class="fas fa-gamepad"></i> <strong>«Бесплатная валюта» в играх</strong> — мошенники предлагают внутриигровую валюту, скины или прокачку аккаунта, взамен просят данные банковской карты родителей «для подтверждения». Результат — списание денег и кража персональных данных.</li>
+                    <li><i class="fas fa-gift"></i> <strong>Фейковые розыгрыши в TikTok/Telegram</strong> — реклама «розыгрыша айфона»: для получения приза нужно перевести небольшую сумму «за доставку» или «страховку». После перевода — тишина, аккаунт блокируется.</li>
+                    <li><i class="fas fa-exclamation-triangle"></i> <strong>Угрозы блокировки аккаунта</strong> — в соцсетях приходит сообщение от «администрации»: ваш аккаунт нарушил правила и будет удалён через 2 часа. Чтобы спасти страницу, требуется оплатить «штраф» (2000-5000 руб.) картой или переводом. Настоящие модераторы так не делают.</li>
+                    <li><i class="fas fa-coins"></i> <strong>Дропперство (лёгкий заработок)</strong> — подросткам предлагают «работу»: оформить банковскую карту на своё имя и передать её данные злоумышленникам за небольшое вознаграждение (1000-3000 руб.). Это соучастие в отмывании денег, ответственность по статье 174 УК РФ.</li>
+                    <li><i class="fas fa-robot"></i> <strong>Поддельные боты в Discord</strong> — бот от имени «администрации сервера» пишет: «Вы выиграли Nitro! Перейдите по ссылке и введите логин/пароль». Ссылка ведёт на фишинговый сайт, крадущий аккаунт.</li>
                 </ul>
                 <h4><i class="fas fa-shield-alt"></i> Как защититься:</h4>
-                <p>Объясните ребёнку: настоящий администратор не просит пароль или код. Халявы не бывает. При подозрении — сразу рассказать родителям.</p>
+                <p>✅ Объясните ребёнку: настоящий администратор никогда не просит пароль или код из SMS.<br>✅ Никаких переводов незнакомцам.<br>✅ При сомнении — сразу рассказать родителям.<br>✅ Настроить двухфакторную аутентификацию на всех аккаунтах.</p>
             </div>
-            <div id="tab2" class="tab-content">
+            <div id="tab2" class="tab-content fade-on-scroll">
                 <ul class="scheme-list">
-                    <li><i class="fas fa-briefcase"></i> <strong>Фальшивые вакансии с предоплатой</strong> — платить за трудоустройство запрещено.</li>
-                    <li><i class="fas fa-lock"></i> <strong>Взлом Госуслуг через «техподдержку»</strong> — код из SMS даёт доступ к вашим кредитам.</li>
-                    <li><i class="fas fa-chart-line"></i> <strong>Ложные инвестиции (криптопирамиды)</strong> — 100% доходности не бывает, проверяйте лицензию на cbr.ru.</li>
-                    <li><i class="fas fa-phone-alt"></i> <strong>Звонок из «банка» про безопасный счёт</strong> — настоящий банк не просит переводить деньги.</li>
-                    <li><i class="fas fa-shopping-cart"></i> <strong>Фишинг на маркетплейсах</strong> — всегда вводите адрес вручную, не переходите по ссылкам из SMS.</li>
-                    <li><i class="fas fa-comment-dots"></i> <strong>Поддельный друг в мессенджере</strong> — позвоните другу, прежде чем переводить деньги.</li>
+                    <li><i class="fas fa-briefcase"></i> <strong>Фальшивые вакансии с предоплатой</strong> — объявления: «Удалённая работа от 5000 ₽/день, нужен только компьютер». После отклика просят оплатить «стажировку», «доступ к базе» или «регистрационный взнос» (500-5000 ₽). Работы не будет, деньги не вернут.</li>
+                    <li><i class="fas fa-lock"></i> <strong>Взлом Госуслуг через «техподдержку»</strong> — звонок: «Ваш аккаунт взломан, срочно назовите код из СМС для восстановления». Получив код, мошенники меняют пароль, затем оформляют микрозаймы и кредиты на имя жертвы.</li>
+                    <li><i class="fas fa-chart-line"></i> <strong>Ложные инвестиции (криптопирамиды)</strong> — в Instagram/Telegram приглашают в «высокодоходный проект» с гарантией 30-50% в месяц. Платформа красиво оформлена, есть фейковые отзывы. Сначала дают заработать небольшие суммы (2000-5000 руб.), чтобы втянуть, затем просят крупный депозит — и проект исчезает.</li>
+                    <li><i class="fas fa-phone-alt"></i> <strong>Звонок из «банка» про безопасный счёт</strong> — лже-сотрудник сообщает о подозрительной операции и убеждает перевести все сбережения на «безопасный счёт» (на самом деле — счёт мошенника). Вариант: попросить снять наличные и передать курьеру.</li>
+                    <li><i class="fas fa-shopping-cart"></i> <strong>Фишинг на маркетплейсах</strong> — приходит СМС/email: «Ваш заказ на Ozon заморожен, подтвердите оплату по ссылке». Ссылка ведёт на точную копию сайта, где при вводе данных карты они уходят злоумышленникам. Всегда вводите адрес вручную.</li>
+                    <li><i class="fas fa-comment-dots"></i> <strong>Поддельный друг в мессенджере</strong> — хакеры взламывают аккаунт знакомого и пишут: «Привет, выручи, срочно нужно 10 000 на операцию, завтра верну». Прежде чем переводить — позвоните другу по реальному номеру телефона.</li>
                 </ul>
                 <h4><i class="fas fa-shield-alt"></i> Как защититься:</h4>
-                <p>Никогда не называйте коды из SMS. При звонке из банка кладите трубку и перезванивайте сами. Проверяйте лицензии финансовых компаний на сайте ЦБ РФ.</p>
+                <p>🚫 Никогда не называйте коды из СМС, CVC-код, PIN.<br>📞 При звонке из банка — кладите трубку и перезванивайте по номеру с карты.<br>🔍 Проверяйте лицензии финансовых компаний на сайте cbr.ru.<br>👨‍👩‍👧 Обсуждайте любые финансовые решения с близкими.</p>
             </div>
-            <div id="tab3" class="tab-content">
+            <div id="tab3" class="tab-content fade-on-scroll">
                 <ul class="scheme-list">
-                    <li><i class="fas fa-family"></i> <strong>«Родственник в беде»</strong> — перезвоните внуку сами, он скорее всего дома.</li>
-                    <li><i class="fas fa-gavel"></i> <strong>Звонок от лже-ФСБ / полиции</strong> — силовики никогда не звонят с требованием перевести деньги.</li>
-                    <li><i class="fas fa-hand-holding-heart"></i> <strong>Лжесоцработники, врачи, ЖЭК на дому</strong> — не открывайте дверь незнакомцам, проверяйте через управляющую компанию.</li>
-                    <li><i class="fas fa-trophy"></i> <strong>Выигрыш с оплатой налога</strong> — Пенсионный фонд не берёт деньги за выплаты.</li>
-                    <li><i class="fas fa-exchange-alt"></i> <strong>Обмен валюты по выгодному курсу</strong> — только через банки или проверенные обменники.</li>
-                    <li><i class="fas fa-tools"></i> <strong>«Срочная замена счётчиков»</strong> — настоящие специалисты приходят по предварительной записи.</li>
+                    <li><i class="fas fa-family"></i> <strong>«Родственник в беде»</strong> — звонок: «Бабушка, это я (внук/сын), попал в аварию. Нужно 200 000 ₽ адвокату, иначе посадят». Звонят часто ночью, голос взволнованный. Перезвоните родственнику сами — скорее всего, он дома.</li>
+                    <li><i class="fas fa-gavel"></i> <strong>Звонок от лже-ФСБ / полиции</strong> — представляются сотрудниками ФСБ, прокуратуры: «Ваши деньги переводят террористам. Срочно переведите все средства на специальный счёт для проверки». Настоящие силовики никогда не требуют переводов.</li>
+                    <li><i class="fas fa-hand-holding-heart"></i> <strong>Лжесоцработники, врачи, ЖЭК на дому</strong> — под видом социального работника, врача или электрика просят открыть дверь: «Принесли льготные лекарства», «Делаем перерасчёт пенсии», «Проверяем счётчики». Войдя в квартиру, отвлекают и крадут наличные/ценности.</li>
+                    <li><i class="fas fa-trophy"></i> <strong>Выигрыш с оплатой налога</strong> — СМС: «Вы выиграли автомобиль/ноутбук в лотерее! Для получения оплатите налог 15 000 ₽». Пенсионный фонд, банки и другие госорганы не берут деньги за оформление выигрышей.</li>
+                    <li><i class="fas fa-exchange-alt"></i> <strong>Обмен валюты по выгодному курсу</strong> — на улице или в интернете предлагают обменять валюту по курсу на 10-20% выше банковского. После перевода денег «обменщик» исчезает. Меняйте валюту только в официальных пунктах или банках.</li>
+                    <li><i class="fas fa-tools"></i> <strong>«Срочная замена счётчиков / фильтров»</strong> — приходят домой, запугивают поломкой оборудования, навязывают ненужную замену по ценам в 5-10 раз выше рыночных. Всегда проверяйте любых визитёров через управляющую компанию или ЖЭК.</li>
                 </ul>
                 <h4><i class="fas fa-shield-alt"></i> Как защититься:</h4>
-                <p>Установите правило: при любом звонке с просьбой денег — положить трубку и перезвонить родственнику. Обсудите это с пожилыми родителями.</p>
+                <p>🔒 Установите правило: при любом звонке с просьбой денег — положить трубку и перезвонить родственнику.<br>🚪 Не открывайте дверь незнакомцам. Вызовите полицию при подозрении.<br>💰 Не держите крупные суммы наличными дома.<br>📱 Установите на телефоны родителей приложение «Защитник» (определитель спам-звонков).</p>
             </div>
         </div>
     </section>
 
-    <!-- Шесть ключевых принципов обмана (подробно) -->
+    <!-- 6 КЛЮЧЕВЫХ ПРИНЦИПОВ ОБМАНА -->
     <section id="psycho">
         <div class="container">
             <h2 class="section-title">6 ключевых принципов обмана</h2>
             <div class="methods-grid">
-                <div class="method-card"><i class="fas fa-hourglass-half"></i><strong>⏱ Срочность</strong><p><strong>Механизм:</strong> «У вас 5 минут! Иначе деньги сгорят». Стресс отключает логику, не даёт подумать.</p><p><strong>Защита:</strong> Как слышите «срочно» — это красный флаг. Скажите: «Я перезвоню через 15 минут». Настоящая проблема подождёт.</p></div>
-                <div class="method-card"><i class="fas fa-gavel"></i><strong>👮 Авторитет</strong><p><strong>Механизм:</strong> «Звонок из полиции / Центробанка». Доверие к форме заставляет верить без проверки.</p><p><strong>Защита:</strong> Положите трубку и перезвоните сами по официальному номеру (с карты или сайта). Настоящий сотрудник поймёт.</p></div>
-                <div class="method-card"><i class="fas fa-heart"></i><strong>❤️ Жалость</strong><p><strong>Механизм:</strong> «Помогите ребёнку / больной маме». Эмпатия отключает критическое мышление.</p><p><strong>Защита:</strong> Проверяйте сборы через официальные фонды. Не переводите деньги на карту физлица без проверки.</p></div>
-                <div class="method-card"><i class="fas fa-money-bill-wave"></i><strong>💰 Жадность</strong><p><strong>Механизм:</strong> «Лёгкий заработок, гарантия 100%». Дофаминовая ловушка — мы хотим верить в халяву.</p><p><strong>Защита:</strong> Бесплатный сыр только в мышеловке. Доходность выше 20% годовых — уже риск. Проверяйте лицензию ЦБ.</p></div>
-                <div class="method-card"><i class="fas fa-users"></i><strong>👥 Социальное доказательство</strong><p><strong>Механизм:</strong> «Все уже перевели, присоединяйтесь». Стадный инстинкт заставляет повторять за другими.</p><p><strong>Защита:</strong> Отзывы легко подделать. Ищите мнения на независимых форумах, проверяйте через чёрные списки ЦБ.</p></div>
-                <div class="method-card"><i class="fas fa-handshake"></i><strong>🤝 Взаимный обмен</strong><p><strong>Механизм:</strong> «Мы помогли вам, теперь помогите вы». Чувство долга толкает на необдуманные поступки.</p><p><strong>Защита:</strong> Если вам «помогли» без запроса — отказывайтесь сразу. Не дайте втянуть себя в долговую ловушку.</p></div>
+                <div class="method-card fade-on-scroll"><i class="fas fa-hourglass-half"></i><strong>Срочность</strong><p><strong>Механизм:</strong> Искусственный дефицит времени — «У вас 5 минут!» или «Только сегодня». В стрессе человек не успевает обдумать решение, опирается на эмоции.</p><p><strong>Защита:</strong> Как слышите слово «срочно» — это красный флаг. Скажите: «Я перезвоню через 15 минут». Настоящая проблема подождёт.</p><p><strong>Пример:</strong> «Ваш счёт заблокируют через 2 часа, переведите деньги на безопасный счёт».</p></div>
+                <div class="method-card fade-on-scroll"><i class="fas fa-gavel"></i><strong>Авторитет</strong><p><strong>Механизм:</strong> Использование реальных названий организаций (банк, полиция, ФСБ, Госуслуги). Люди склонны безоговорочно верить представителям власти.</p><p><strong>Защита:</strong> Положите трубку, найдите официальный номер организации (на обороте карты, на сайте) и перезвоните сами. Настоящий сотрудник подтвердит, звонили они или нет.</p><p><strong>Пример:</strong> «По информационной базе ФСБ: ваши деньги идут на финансирование терроризма. Срочно переведите на наш специальный счёт».</p></div>
+                <div class="method-card fade-on-scroll"><i class="fas fa-heart"></i><strong>Жалость</strong><p><strong>Механизм:</strong> Эмоциональный шантаж: больной ребёнок, пострадавшие в ДТП, голодные животные. Эмпатия отключает критическое мышление, жертва переводит деньги не раздумывая.</p><p><strong>Защита:</strong> Проверьте сборы через официальные благотворительные фонды (например, «Подари жизнь»). Не переводите деньги на карту физического лица. Если просят срочно — это повод усомниться.</p><p><strong>Пример:</strong> «Срочно нужны деньги на операцию для девочки 5 лет, переведите любую сумму».</p></div>
+                <div class="method-card fade-on-scroll"><i class="fas fa-money-bill-wave"></i><strong>Жадность</strong><p><strong>Механизм:</strong> Обещание чрезвычайно высокой доходности (100-300% годовых), «лёгкий заработок», «пассивный доход», крипто-пирамиды. Дофаминовая ловушка заставляет нас верить в халяву.</p><p><strong>Защита:</strong> Бесплатный сыр только в мышеловке. Доходность выше 20% годовых — уже риск. Проверьте наличие лицензии у организации на сайте cbr.ru.</p><p><strong>Пример:</strong> «Инвестируйте 10 000 ₽, через месяц получите 40 000 ₽ гарантированно».</p></div>
+                <div class="method-card fade-on-scroll"><i class="fas fa-users"></i><strong>Социальное доказательство</strong><p><strong>Механизм:</strong> Фальшивые отзывы и истории успеха в чатах, группы «инвесторов», где все пишут: «я заработал, присоединяйтесь». Стадный инстинкт заставляет повторять за толпой.</p><p><strong>Защита:</strong> Отзывы легко подделать с помощью ботов. Ищите независимые мнения на форумах и сайтах-отзовиках. Проверьте компанию в чёрных списках ЦБ РФ.</p><p><strong>Пример:</strong> «Посмотрите, сотни людей уже вывели прибыль, ссылка в описании».</p></div>
+                <div class="method-card fade-on-scroll"><i class="fas fa-handshake"></i><strong>Взаимный обмен</strong><p><strong>Механизм:</strong> Сначала вам оказывают небольшую «услугу» бесплатно (помогают настроить приложение, консультируют), затем просят ответной услуги — перевести деньги, сообщить код из СМС.</p><p><strong>Защита:</strong> Если вам «помогли» без вашего запроса — отказывайтесь сразу. Не дайте втянуть себя в долговую ловушку. Настоящие специалисты не требуют оплаты после бесплатной консультации задним числом.</p><p><strong>Пример:</strong> «Мы вам помогли разблокировать аккаунт, теперь оплатите услугу 5000 ₽, иначе снова заблокируем».</p></div>
             </div>
             <h3 style="text-align:center; margin:50px 0 20px;">Алгоритм «Стоп – Пауза – Проверка»</h3>
             <div class="steps">
-                <div class="step"><div class="step-icon"><i class="fas fa-stop-circle"></i></div><h3>СТОП</h3><p>Распознай манипуляцию: торопят? страх? просят тайну?</p></div>
-                <div class="step"><div class="step-icon"><i class="fas fa-pause-circle"></i></div><h3>ПАУЗА</h3><p>Прерви разговор. Положи трубку. 5 глубоких вдохов. 15 минут тишины.</p></div>
-                <div class="step"><div class="step-icon"><i class="fas fa-check-circle"></i></div><h3>ПРОВЕРКА</h3><p>Перезвони сам по официальному номеру. Посоветуйся с близкими. Не сообщай коды из SMS.</p></div>
+                <div class="step fade-on-scroll"><div class="step-icon"><i class="fas fa-stop-circle"></i></div><h3>1. СТОП</h3><p>Распознай манипуляцию: меня торопят? я испытываю сильные эмоции? меня просят сохранить тайну? Если да — это красный флаг.</p></div>
+                <div class="step fade-on-scroll"><div class="step-icon"><i class="fas fa-pause-circle"></i></div><h3>2. ПАУЗА</h3><p>Прерви разговор. Положи трубку. Не отвечай на сообщения. Сделай 5 глубоких вдохов. Подожди 15 минут — уровень кортизола упадёт.</p></div>
+                <div class="step fade-on-scroll"><div class="step-icon"><i class="fas fa-check-circle"></i></div><h3>3. ПРОВЕРКА</h3><p>Перезвони сам по официальному номеру (на обороте карты, на сайте банка). Посоветуйся с близкими. Никогда не сообщай коды из SMS.</p></div>
+            </div>
+            <div class="quote-block fade-on-scroll" style="margin-top: 40px; text-align: center;">
+                <i class="fas fa-clock"></i> Помните: профессиональные мошенники будут давить именно на эти 6 рычагов. Тренируйтесь распознавать их в повседневной жизни.
             </div>
         </div>
     </section>
@@ -602,13 +604,13 @@
         <div class="container">
             <h2 class="section-title">Дипфейки — угроза 2026 года</h2>
             <div style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: center;">
-                <div class="card" style="flex:1; padding:28px; text-align:center;"><i class="fas fa-mask" style="font-size:2.5rem; color:var(--primary);"></i><br><strong>Неестественная мимика</strong><br>Лицо почти не двигается, губы не синхронны</div>
-                <div class="card" style="flex:1; padding:28px; text-align:center;"><i class="fas fa-image" style="font-size:2.5rem; color:var(--primary);"></i><br><strong>Искажённый фон</strong><br>Размытые контуры, «плывущие» предметы</div>
-                <div class="card" style="flex:1; padding:28px; text-align:center;"><i class="fas fa-microphone-alt" style="font-size:2.5rem; color:var(--primary);"></i><br><strong>Металлический голос</strong><br>Нет естественных пауз, странные интонации</div>
+                <div class="card fade-on-scroll" style="flex:1; padding:28px; text-align:center;"><i class="fas fa-mask" style="font-size:2.5rem; color:var(--primary);"></i><br><strong>Неестественная мимика</strong><br>Лицо почти не двигается, губы не синхронны</div>
+                <div class="card fade-on-scroll" style="flex:1; padding:28px; text-align:center;"><i class="fas fa-image" style="font-size:2.5rem; color:var(--primary);"></i><br><strong>Искажённый фон</strong><br>Размытые контуры, «плывущие» предметы</div>
+                <div class="card fade-on-scroll" style="flex:1; padding:28px; text-align:center;"><i class="fas fa-microphone-alt" style="font-size:2.5rem; color:var(--primary);"></i><br><strong>Металлический голос</strong><br>Нет естественных пауз, странные интонации</div>
             </div>
-            <div class="quote-block" style="margin-top:40px; padding:28px; text-align:center;">
-                <i class="fas fa-exclamation-triangle"></i> Мошенники клонируют голос по 3-секундной записи из соцсетей.<br>
-                <strong>Если голос родственника кажется подозрительным — прерви звонок и перезвони сам на его настоящий номер.</strong>
+            <div class="quote-block fade-on-scroll" style="margin-top:40px; padding:28px; text-align:center;">
+                <i class="fas fa-exclamation-triangle"></i> Мошенники клонируют голос по 3-секундной записи из соцсетей. Сейчас уже есть случаи видеозвонков с поддельным лицом родственника.<br>
+                <strong>Если голос или поведение родственника кажется подозрительным — прервите звонок и перезвоните сами на его настоящий номер. Используйте секретное слово (пароль), о котором знают только близкие.</strong>
             </div>
         </div>
     </section>
@@ -618,13 +620,13 @@
         <div class="container">
             <h2 class="section-title">Экстренная помощь</h2>
             <div class="help-buttons">
-                <a href="tel:900" class="help-btn"><i class="fas fa-university"></i> Сбербанк 900</a>
-                <a href="https://xn--b1aew.xn--p1ai/contacts" target="_blank" class="help-btn"><i class="fas fa-shield-alt"></i> МВД России</a>
-                <a href="tel:112" class="help-btn emergency"><i class="fas fa-phone-alt"></i> 112 (единый)</a>
-                <a href="https://cbr.ru/" target="_blank" class="help-btn"><i class="fas fa-chart-line"></i> ЦБ РФ — проверка лицензий</a>
+                <a href="tel:900" class="help-btn fade-on-scroll"><i class="fas fa-university"></i> Сбербанк 900</a>
+                <a href="tel:112" class="help-btn emergency fade-on-scroll"><i class="fas fa-phone-alt"></i> 112 (единый)</a>
+                <a href="https://xn--b1aew.xn--p1ai/contacts" target="_blank" class="help-btn fade-on-scroll"><i class="fas fa-shield-alt"></i> МВД России</a>
+                <a href="https://cbr.ru/" target="_blank" class="help-btn fade-on-scroll"><i class="fas fa-chart-line"></i> ЦБ РФ — проверка лицензий</a>
             </div>
             <div style="text-align:center; margin-top:30px;">
-                <button id="callRelativeBtn" class="help-btn emergency"><i class="fas fa-phone"></i> 📞 Позвонить родственнику</button>
+                <button id="callRelativeBtn" class="help-btn emergency fade-on-scroll"><i class="fas fa-phone"></i> Позвонить родственнику</button>
             </div>
         </div>
     </section>
@@ -633,14 +635,14 @@
     <section id="about">
         <div class="container">
             <h2 class="section-title">О проекте</h2>
-            <div class="feedback-form">
+            <div class="feedback-form fade-on-scroll">
                 <h3 style="margin-bottom:20px;"><i class="fas fa-envelope"></i> Сообщить о новой схеме</h3>
                 <form id="feedbackForm">
                     <input type="text" placeholder="Ваше имя (необязательно)">
                     <textarea rows="3" placeholder="Опишите схему мошенников..."></textarea>
                     <button type="submit"><i class="fas fa-paper-plane"></i> Отправить</button>
                 </form>
-                <p style="margin-top:20px; font-size:0.85rem;">Источники: МВД РФ, Сбер, ВЦИОМ, труды Д. Канемана, Р. Чалдини, нейроисследования СПбГУ (2024–2026).<br>Проект не является финансовой консультацией.</p>
+                <p style="margin-top:20px; font-size:0.85rem;">Источники: МВД РФ, Сбер, ВЦИОМ, труды Д. Канемана (две системы мышления), Р. Чалдини (6 принципов влияния), нейроисследования СПбГУ (2024–2026).<br>Проект не является финансовой консультацией. Информация обновлена на 2026 год.</p>
             </div>
         </div>
     </section>
@@ -654,7 +656,7 @@
 </div>
 
 <script>
-    // Анимация печатающейся строки
+    // Печатающаяся строка
     const phrases = [
         "Распознай уловки мошенников",
         "5 вопросов — и ты вооружён",
@@ -774,6 +776,7 @@
             });
         });
     }
+    // Элдер-мод
     const elderBtn = document.getElementById('elderModeBtn');
     elderBtn.addEventListener('click', () => {
         document.body.classList.toggle('elder-mode');
@@ -804,6 +807,18 @@
     });
     renderQuestions();
     initTabs();
+
+    // Анимация при прокрутке (для всех элементов с классом fade-on-scroll)
+    const fadeElements = document.querySelectorAll('.fade-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // отключаем после появления
+            }
+        });
+    }, { threshold: 0.1 });
+    fadeElements.forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
